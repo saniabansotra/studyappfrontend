@@ -6,44 +6,47 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-app.get("/login", cors(), (req, res) => {
+app.get("/", cors(), (req, res) => {});
 
-});
-app.post("/login", async (req, res) => {
-  const { email,password } = req.body;
+app.post("/", async (req, res) => {
+  const { email, password } = req.body;
 
   try {
     const check = await collection.findOne({ email: email });
-    if (check) {
+    const checkpassword = await collection.findOne({ password: password });
+
+    if (check && checkpassword) {
       res.json("exist");
     } else {
-      res.json("not exist");
+      res.json("notexist");
     }
-  } catch (error) {
-    return res.json("fail");
+  } catch (e) {
+    res.json("fail");
   }
 });
 
 app.post("/signup", async (req, res) => {
   const { email, password } = req.body;
+
   const data = {
     email: email,
     password: password,
   };
+
   try {
     const check = await collection.findOne({ email: email });
+
     if (check) {
       res.json("exist");
     } else {
-      res.json("not exist");
+      res.json("notexist");
       await collection.insertMany([data]);
     }
-  } catch (error) {
-    return res.json("not exist");
+  } catch (e) {
+    res.json("fail");
   }
 });
 
-const PORT = 8000;
-app.listen(PORT, () => {
-  console.log("Server is connected on port", PORT);
+app.listen(8000, () => {
+  console.log("port connected");
 });

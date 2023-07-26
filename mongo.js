@@ -1,16 +1,14 @@
 const mongoose = require("mongoose");
-
 mongoose
-  .connect("mongodb://127.0.0.1:27017/frontend")
+  .connect("mongodb://0.0.0.0:27017/react-login-tut")
   .then(() => {
-    console.log("Database connected successfully");
+    console.log("mongodb connected");
   })
   .catch(() => {
     console.log("failed");
   });
-// module.exports = { connectDatabase };
 
-const login_schema = new mongoose.Schema({
+const newSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
@@ -20,5 +18,7 @@ const login_schema = new mongoose.Schema({
     required: true,
   },
 });
-const collection = mongoose.model("collection", login_schema);
+
+const collection = mongoose.model("collection", newSchema);
+
 module.exports = collection;

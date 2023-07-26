@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+body{
+  background-color: rgb(140, 247, 247);
+}
+.form{
+  background-color:rgb(88, 218, 241);
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  margin-left: 40%;
+  margin-right: 40%;
+  border-radius: 30%;
+  color:rgb(245, 247, 249);
+  /* border-color:rgb(240, 244, 11) ; */
+  /* border-width: 0.1cm; */
+  /* border-style: solid; */
+  box-shadow: 14px 14px 20px #0c02088c;
+ 
+ 
+
+}
+nav{
+justify-content: left;
+}
