@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import logo1 from "./logo.jpg";
 
 function Login() {
   const history = useNavigate();
@@ -34,34 +35,47 @@ function Login() {
   }
 
   return (
-    <div className="login" class="form">
-      <h1>Signup</h1>
+    <div>
+      <nav>
+        <img src={logo1} class="image" width="100px" alt="Logo" />
+        <h1>CHATTER</h1>
+      </nav>
+      <div className="login" class="form">
+        <h1>SIGN IN</h1>
 
-      <form action="POST">
-        <input
-          type="email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          placeholder="Email"
-        />
+        <form action="POST">
+          <input
+            type="email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            placeholder="Email"
+          />
+          <br />
+          <input
+            type="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            placeholder="Password"
+          />
+          <br />
+          <input
+            class="button1"
+            type="submit"
+            value="SIGN IN"
+            onClick={submit}
+          />
+        </form>
+
         <br />
-        <input
-          type="password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          placeholder="Password"
-        />
+        <p>OR</p>
         <br />
-        <input type="submit" onClick={submit} />
-      </form>
 
-      <br />
-      <p>OR</p>
-      <br />
-
-      <Link to="/">Login Page</Link>
+        <Link to="/" style={{ color: "rgb(53, 249, 49)" }}>
+          Login Page
+        </Link>
+      </div>
     </div>
   );
 }

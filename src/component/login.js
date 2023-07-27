@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import logo1 from "./logo.jpg";
 
 function Login() {
   const history = useNavigate();
@@ -34,9 +35,10 @@ function Login() {
   }
 
   return (
-    <div> 
+    <div>
       <nav>
-        <h1>TWITTER</h1>
+        <img src={logo1} class="image" width="100px" alt="Logo" />
+        <h1>CHATTER</h1>
       </nav>
       <div className="login" class="form">
         <h1>Login</h1>
@@ -58,14 +60,14 @@ function Login() {
             placeholder="Password"
           />
           <br />
-          <input type="submit" onClick={submit} />
+          <input class="button1" type="submit" value="LOGIN" onClick={submit} />
         </form>
 
         <br />
         <p>OR</p>
         <br />
 
-        <Link to="/signup" style={{ color: "red" }}>
+        <Link to="/signup" style={{ color: "rgb(53, 249, 49)" }}>
           Signup Page
         </Link>
       </div>

@@ -21,4 +21,21 @@ const newSchema = new mongoose.Schema({
 
 const collection = mongoose.model("collection", newSchema);
 
+const userSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  newdate: {
+    type: Date,
+    required: true,
+  },
+  tweets: {
+    type: String,
+    required: true,
+  },
+});
+
+const twitteruser = mongoose.model("twitteruser", userSchema);
 module.exports = collection;
+module.exports = twitteruser;

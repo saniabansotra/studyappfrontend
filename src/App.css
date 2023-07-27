@@ -37,25 +37,128 @@
   }
 }
 body{
-  background-color: rgb(140, 247, 247);
+  /* background-color: rgb(140, 247, 247); */
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
+  /* min-height: 40vh; */
+  /* background: #000; */
+  background-image: url(component/backgroundimage.webp);
+   
 }
 .form{
-  background-color:rgb(88, 218, 241);
+  background-color:rgb(9, 9, 9);
+  justify-content: center;
+   align-items: center;
+    
+    margin-left: 38%;
+ margin-right: 0%;
+  padding: 5%;
+  border-radius: 20%;
+  color:rgb(53, 249, 49);
+  border-color:rgb(6, 6, 6) ; 
+  border-width: 0.1cm;
+  border-style: solid;
+  box-shadow: 14px 14px 20px #04ed2b8c;
+  position:absolute; 
+  position: absolute;
+ }
+ nav{
+margin: 0px;
+padding: 0px;
+color:green;
+ /* background-color: red;  */
+}
+
+.button1{
+color:rgb(7, 198, 10);
+background: rgb(3, 3, 3);
+margin-top: 10%;
+padding: 5%;
+border-radius: 20%;
+border-color: rgb(7, 198, 10);
+
+box-shadow:2px 2px 20px #04ed2b8c;
+}
+img{
+  padding-bottom:0px;
+  height: 80px;
+  margin:1%;
+}
+#list{
+  color:rgb(58, 240, 12);
+  
+  display: grid;
+  grid-template-columns:auto auto auto auto auto auto;
+  gap:10px;
+  
+  padding:20px;
+  margin-top:26%;
+ position:absloute;
+ }
+ #listdata{
+  border-width: 0.2%;
+  border-style: solid;
+  border-color:rgb(114, 247, 6);
+  background-color: #000; 
+  
+ } 
+#main1{
+
   justify-content: center;
   align-items: center;
-  margin-top: 10%;
-  margin-left: 40%;
-  margin-right: 40%;
-  border-radius: 30%;
-  color:rgb(245, 247, 249);
-  /* border-color:rgb(240, 244, 11) ; */
-  /* border-width: 0.1cm; */
-  /* border-style: solid; */
-  box-shadow: 14px 14px 20px #0c02088c;
- 
- 
+  
+   /* background-color: aliceblue;  */
+    margin-left: 40%; 
+   margin-right: 30%; 
+   padding:50px;
+   position:absolute;
+   border-radius: 30%;
+   color:rgb(59, 243, 8);
+   
+   border-width: 0.1cm;
+   border-style: dotted;
+   box-shadow:2px 2px 20px #03d0368c ;
+   /* background:blur; */
+  
+   background: linear-gradient(to right bottom,rgb(19, 42, 1) 50%,rgb(7, 76, 3) 50%,black 50%, black 50%);
+   opacity:10px;
+   backdrop-filter: blur(30px);
+  
+} 
+.input{
+  /* background:black; */
+  padding:12px;
+  border-radius: 20%;
+  backdrop-filter: blur(30px);
 
 }
-nav{
-justify-content: left;
+.image1{
+  margin-right:90%;
+  padding:0;
 }
+@media all and (max-width:700px){
+#list{
+  display:flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 110%;
+}
+#main1{
+  padding:15px;
+  margin-left:25%
+
+}
+}
+ /* @media all and (max-width:1024px){
+  #list{
+   
+    margin-top: 50%;
+  }
+  #main1{
+    padding:15px;
+    margin-left:25%
+  
+  }
+  
+  }  */
