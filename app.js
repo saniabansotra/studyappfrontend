@@ -55,14 +55,6 @@ app.get("/api/getuser", async (req, res) => {
     return res.json({ success: false, error: error.message });
   }
 });
-app.delete("/api/deletetask/:id", async (req, res) => {
-  try {
-    const delete_task = await user.findByIdAndDelete(req.params.id);
-    return res.json({ success: true, message: "Deleted Successfully" });
-  } catch (error) {
-    return res.json({ success: false, error: error.message });
-  }
-});
 
 app.post("/api/addtweet", async (req, res) => {
   try {
@@ -74,6 +66,14 @@ app.post("/api/addtweet", async (req, res) => {
     const tweet = new user(newtweet);
     await tweet.save();
     return res.json({ success: true, message: "Data saved successfully" });
+  } catch (error) {
+    return res.json({ success: false, error: error.message });
+  }
+});
+app.delete("/api/deletetask/:id", async (req, res) => {
+  try {
+    const delete_task = await user.findByIdAndDelete(req.params.id);
+    return res.json({ success: true, message: "Deleted Successfully" });
   } catch (error) {
     return res.json({ success: false, error: error.message });
   }

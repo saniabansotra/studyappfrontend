@@ -5,13 +5,17 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import { useEffect } from "react";
-import { SettingsPowerOutlined } from "@mui/icons-material";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+
 const Home = () => {
   const location = useLocation();
   const [newtweets, setnewtweets] = useState([]);
   const [name, setname] = useState("");
   const [tweets, settweet] = useState("");
   const [newdate, setdate] = useState([new Date()]);
+  const [starredElements, setStarredElements] = useState([]);
 
   const gettweet = async () => {
     const response = await axios.get("/api/getuser");
@@ -29,7 +33,7 @@ const Home = () => {
     toast.success("created Successfully");
     setname("");
     settweet("");
-    setdate("");
+    setdate(new Date());
     /// api for sending data to backend
     const response = await axios.post("/api/addtweet", {
       name,
@@ -48,13 +52,47 @@ const Home = () => {
       toast.error("Something went wrong");
     }
   };
-  const edittweet = (i) => {
-    const oldtweet = [...newtweets];
-    oldtweet[i].TweetName = name;
-    oldtweet[i].TweetDate = newdate;
-    // oldtweet[i].newTweet = tweet;
-    setnewtweets(oldtweet);
+  const toggleStar = (element) => {
+    if (starredElements.includes(element)) {
+      setStarredElements(starredElements.filter((item) => item !== element));
+    } else {
+      setStarredElements([...starredElements, element]);
+    }
   };
+  const showStarredElements = () => {
+    return starredElements.map((element, index) => (
+      <li key={index}>{element}</li>
+    ));
+  };
+  // const like = (i) => {
+  //   const oldtweets = [...newtweets];
+  //   const oldliked = [...likedtweet];
+  //   oldliked.push(oldtweets[i]);
+  //   setliked(oldliked);
+  // };
+  const liked = () => {
+    return <>{}</>;
+  };
+  // const edittweet = async (i) => {
+  //   const oldtweets = [...newtweets];
+  //   oldtweets[i].newtweet = (
+  //     <textarea
+  //       type="text"
+  //       value={updatedtweet}
+  //       onChange={(e) => setupdated(e.target.value)}
+  //     />
+  //   );
+  //   // settweet(oldtweets[i].newtweet);
+  //   setnewtweets(oldtweets);
+  //   // const response = await axios.post("/api/update");
+  //   // {
+  //   //   newtweet: updatedtweet;
+  //   // }
+  // };
+  // const saveedit = (event) => {
+  //   setEditedText(event.target.value);
+  // };
+
   useEffect(() => {
     gettweet();
   }, []);
@@ -62,6 +100,8 @@ const Home = () => {
     <>
       <nav>
         <img src={logo1} class="image1" width="100px" alt="Logo" />
+        <button onClick={showStarredElements}>Show Starred</button>
+        {/* <button onClick={}> <FavoriteIcon /></button> */}
 
         <h1 style={{ color: "green", marginTop: "0" }}>
           <marquee scrollamount="20">
@@ -123,11 +163,11 @@ const Home = () => {
                 <ul>
                   <li> Date: {v.TweetDate}</li>
                   <li> Name: {v.TweetName}</li>
-                  <li>New Tweet: {v.newtweet}</li>
+                  <li>New Chat: {v.newtweet}</li>
                 </ul>
-                <button type="button" onClick={() => edittweet(i)}>
+                {/* <button type="button" onClick={() => edittweet(i)}>
                   Edit
-                </button>
+                </button> */}
                 <button
                   type="button"
                   onClick={() =>
@@ -137,7 +177,10 @@ const Home = () => {
                     handleDelete(v._id)
                   }
                 >
-                  Delete
+                  <DeleteForeverIcon />
+                </button>
+                <button onClick={() => toggleStar(v)}>
+                  <FavoriteBorderIcon />
                 </button>
               </div>
             </>
