@@ -67,7 +67,9 @@ body{
 margin: 0px;
 padding: 0px;
 color:green;
- /* background-color: red;  */
+ /* background-color: red; 
+ display: flex;
+ flex-direction: column; */
 }
 
 .button1{
