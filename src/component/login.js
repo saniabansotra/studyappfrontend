@@ -20,7 +20,7 @@ function Login() {
         })
         .then((res) => {
           if (res.data === "exist") {
-            history("/home", { state: { id: email } });
+            history("/Navbar", { state: { id: email } });
           } else if (res.data === "notexist") {
             alert(" Incorrect details or User have not sign up");
           }

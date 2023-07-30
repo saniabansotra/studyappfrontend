@@ -3,6 +3,8 @@ import Navbar from "./component/Navbar";
 import Home from "./component/home";
 import Login from "./component/login";
 import Signup from "./component/signup";
+import Courses from "./component/courses";
+import Contact from "./component/contact";
 // import {
 //   BrowserRouter as Router,
 //   Switch,
@@ -18,16 +20,16 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <>
-      <Navbar />
-      <div className="App">
-        <Router>
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/home" element={<Home />} />
-          </Routes>
-        </Router>
-      </div>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Login />} />
+          <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/home" element={<Home />} />
+          <Route exact path="/courses" element={<Courses />} />
+          <Route exact path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
     </>
   );
 }
