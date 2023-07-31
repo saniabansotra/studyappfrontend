@@ -5,6 +5,8 @@ import Login from "./component/login";
 import Signup from "./component/signup";
 import Courses from "./component/courses";
 import Contact from "./component/contact";
+import Front from "./component/front";
+import Feedback from "./component/feedback";
 // import {
 //   BrowserRouter as Router,
 //   Switch,
@@ -28,6 +30,8 @@ function App() {
           <Route exact path="/home" element={<Home />} />
           <Route exact path="/courses" element={<Courses />} />
           <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/feedback" element={<Feedback />} />
+          <Route exact path="/front" element={<Front />} />
         </Routes>
       </Router>
     </>

@@ -20,7 +20,7 @@ function Login() {
         })
         .then((res) => {
           if (res.data === "exist") {
-            history("/Navbar", { state: { id: email } });
+            history("/front", { state: { id: email } });
           } else if (res.data === "notexist") {
             alert(" Incorrect details or User have not sign up");
           }
@@ -36,12 +36,17 @@ function Login() {
 
   return (
     <div>
-      <nav>
-        <img src={logo1} class="image" width="100px" alt="Logo" />
-        <h1>CHATTER</h1>
-      </nav>
       <div className="login" class="form">
-        <h1>Login</h1>
+        <h1
+          style={{
+            color: "rgb(53, 249, 49)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          Login
+        </h1>
 
         <form action="POST">
           <input
@@ -60,14 +65,38 @@ function Login() {
             placeholder="Password"
           />
           <br />
-          <input class="button1" type="submit" value="LOGIN" onClick={submit} />
+          <div class="btn-text-center">
+            <input
+              class="button1"
+              type="submit"
+              value="LOGIN"
+              onClick={submit}
+            />
+          </div>
         </form>
 
         <br />
-        <p>OR</p>
+        <p
+          style={{
+            color: "rgb(53, 249, 49)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          OR
+        </p>
         <br />
 
-        <Link to="/signup" style={{ color: "rgb(53, 249, 49)" }}>
+        <Link
+          to="/signup"
+          style={{
+            color: "rgb(53, 249, 49)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           Signup Page
         </Link>
       </div>

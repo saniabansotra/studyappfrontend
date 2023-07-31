@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import logo1 from "./logo.jpg";
+// import logo1 from "./logo.jpg";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
+import FeedbackIcon from "@mui/icons-material/Feedback";
 // import { useEffect } from "react";
 // import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 // import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -29,16 +30,23 @@ const Home = () => {
   //     }
   //   };
   const addtweet = async () => {
-    if (name.trim() === "" || tweets.trim() === "" || newdate.trim() === "") {
+    if (
+      name.trim() === "" ||
+      tweets.trim() === "" ||
+      newdate.trim() === "" ||
+      phone.trim() === "" ||
+      description.trim() === ""
+    ) {
       return toast.error("please provide full details");
     }
     // gettweet();
-    toast.success(
-      "Thanks" + location.state.id + ". We have received your message "
-    );
+    toast.success("Thanks. You have Registered Successfully ");
     setname("");
     settweet("");
     setdate(new Date());
+    setphone("");
+    setdescription("");
+
     /// api for sending data to backend
     const response = await axios.post("/api/addtweet", {
       name,
@@ -48,7 +56,7 @@ const Home = () => {
       phone,
     });
     // gettweet();
-    console.log(response);
+    // console.log(response);
   };
   //   const handleDelete = async (tweetid) => {
   //     const response = await axios.delete(`/api/deletetask/${tweetid}`);
@@ -85,18 +93,27 @@ const Home = () => {
   //   }, []);
   return (
     <>
+      <ToastContainer />
       <nav>
-        <img src={logo1} class="image1" width="100px" alt="Logo" />
+        {/* <img src={logo1} class="image1" width="100px" alt="Logo" /> */}
 
-        <h1 style={{ color: "green", marginTop: "0" }}>
-          <marquee scrollamount="20">
-            Hello <span style={{ color: "purple" }}>{location.state.id} </span>
-            and welcome to our Chatter
-          </marquee>
+        <h1
+          style={{
+            color: "green",
+            marginTop: "0",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            textShadow: "2px 2px purple",
+            color: "green",
+          }}
+        >
+          REGISTRATION
+          <FeedbackIcon />
         </h1>
       </nav>
 
-      <div id="maininput">
+      <div id="maininput" style={{ paddingRight: "10%" }}>
         <div
           className="homepage"
           // style={{ backgroundColor: "cornsilk" }}
@@ -135,31 +152,41 @@ const Home = () => {
               onChange={(e) => settweet(e.target.value)}
             />
           </div>
-          <br />
-          <div class="input">
-            <label style={{ textShadow: "2px 2px purple" }}>
-              <b>Description : </b>
-            </label>
-            <input
-              type="text"
-              value={description}
-              onChange={(e) => setdescription(e.target.value)}
-            />
-          </div>
+
           <br />
           <div class="input">
             <label style={{ textShadow: "2px 2px purple" }}>
               <b>Phone No. : </b>
             </label>
             <input
-              type="number"
+              type="tel"
               value={phone}
               onChange={(e) => setphone(e.target.value)}
             />
           </div>
+          <br />
+          <div class="input">
+            <label style={{ textShadow: "2px 2px purple" }}>
+              <b>Course: </b>
+            </label>
+            {/* <input
+              type="dropdown"
+              value={description}
+              onChange={(e) => setdescription(e.target.value)}
+            /> */}
+            <select
+              name="course"
+              value={description}
+              onChange={(e) => setdescription(e.target.value)}
+            >
+              <option value="Java">Java</option>
+              <option value="C++">C++</option>
+              <option value="Python">Python</option>
+            </select>
+          </div>
 
           <button class="button1" onClick={() => addtweet()}>
-            Add Tweet
+            REGISTER
           </button>
         </div>
       </div>
@@ -175,30 +202,6 @@ const Home = () => {
                   <li>Phone No: {v.phone}</li>
                   <li>Description: {v.description}</li>
                 </ul>
-                {/* <button type="button" onClick={() => edittweet(i)}>
-                  Edit
-                </button> */}
-                {/* <button
-                  type="button"
-                  class="button1"
-                  style={{ marginRight: "2%", padding: "7px" }}
-                  onClick={() =>
-                    // setnewtweets((oldtweets) =>
-                    //   oldtweets.filter((v, index) => index !== i)
-                    // )
-                    handleDelete(v._id)
-                  }
-                > */}
-                {/* <DeleteForeverIcon />
-                </button> */}
-                {/* <button
-                  class="button1"
-                  style={{ padding: "7px" }}
-                  type="button"
-                  onClick={() => like(i)}
-                >
-                  <FavoriteBorderIcon />
-                </button> */}
               </div>
             </>
           );

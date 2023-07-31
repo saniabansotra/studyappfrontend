@@ -1,3 +1,5 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Josefin+Sans:ital,wght@0,400;1,300&family=Lobster&family=Lugrasimo&family=Playfair+Display:ital,wght@0,700;1,400&family=Ubuntu:ital,wght@1,400;1,500&display=swap');
 .App {
   text-align: center;
 }
@@ -47,6 +49,8 @@ body{
    
 }
 .form{
+  /* font-family: 'Lobster', cursive; */
+  
   background-color:rgb(9, 9, 9);
   justify-content: center;
    align-items: center;
@@ -61,7 +65,7 @@ body{
   border-style: solid;
   box-shadow: 14px 14px 20px #04ed2b8c;
   position:absolute; 
-  position: absolute;
+  
  }
  nav{
 margin: 0px;
@@ -106,20 +110,21 @@ img{
   
  } 
 #main1{
-
+display: flex;
+flex-direction: column;
   justify-content: center;
   align-items: center;
   
    /* background-color: aliceblue;  */
     margin-left: 40%; 
-   margin-right: 30%; 
+   margin-right: 20%; 
    padding:50px;
    position:absolute;
-   border-radius: 30%;
+   
    color:rgb(59, 243, 8);
    
    border-width: 0.1cm;
-   border-style: dotted;
+   /* border-style: dotted; */
    box-shadow:2px 2px 20px #03d0368c ;
    /* background:blur; */
   
@@ -164,3 +169,138 @@ img{
   }
   
   }  */
+  .mainfeedback{
+    justify-content: center;
+    align-items: center;
+    
+     /* background-color: aliceblue;  */
+      margin-left: 30%; 
+     margin-right: 30%; 
+     padding:70px;
+     position:absolute;
+     
+     color:rgb(59, 243, 8);
+     
+     border-width: 0.1cm;
+     /* border-style: dotted; */
+     box-shadow:2px 2px 20px #03d0368c ;
+     /* background:blur; */
+    
+     background: linear-gradient(to right bottom,rgb(19, 42, 1) 50%,rgb(7, 76, 3) 50%,black 50%, black 50%);
+     opacity:10px;
+     backdrop-filter: blur(30px);
+    
+  }
+  .headingtext{
+align-items: center;
+justify-content: center;
+margin-left: 30%;
+margin-right: 30%;
+margin-bottom: 1%;
+  }
+  .button2{
+    color:rgb(7, 198, 10);
+    background: rgb(3, 3, 3);
+    margin-top: 10%;
+    margin-left: 2%;
+    padding: 5%;
+    border-radius: 20%;
+    border-color: rgb(7, 198, 10);
+    
+    box-shadow:2px 2px 20px #04ed2b8c;
+    
+    }
+    .coursemain{
+      display: grid;
+      grid-template-columns:auto auto auto auto auto auto;
+      gap:1%
+    }
+    .mainhome{
+      display: grid;
+      grid-template-columns:auto auto auto auto auto auto;
+      gap:1%
+    }
+    .videotext{
+      
+      padding:3px;
+      color:wheat;
+      
+    }
+    .homemain1{
+      display: flex;
+      align-items:center;
+      justify-content: center;
+      font-family: 'Lobster', cursive;
+    }
+    .homemain2{
+      display: flex;
+      align-items:center;
+      justify-content: center;
+      font-family: 'Lobster', cursive;
+    }
+    .homemain{
+     border-width: 0.2cm;
+     /* border-style: solid; */
+     backdrop-filter:blur(5px) ;
+     padding:3px;
+     box-shadow:2px 2px 20px #03d0368c ;
+    }
+     @media all and (max-width:1024px){
+ .mainhome{
+  display: flex;
+  flex-direction: column;
+ }
+  iframe{
+    height: 300px;
+    width:300px
+  }
+  .coursemain{
+    display: flex;
+  flex-direction: column;
+  /* margin-bottom:5%;
+  border: 1px solid blue;
+    box-sizing: border-box;
+  */
+  
+  }
+  .card{
+    margin-bottom: 5px;
+  }
+  }
+  #front1{
+    font-family: 'Lobster', cursive;
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white
+  }
+  #front2{
+    font-family: 'Lobster', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+  }
+  .para{
+    color:white;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  .happy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    margin-top: 4%;
+    font-family: 'Lobster', cursive;
+  }
+  
+  .btn-text-center{
+    text-align: center;	
+    margin-top: 3%;
+    
+  }
+  .coursetext{
+    font-family: 'Lobster', cursive;
+  }
