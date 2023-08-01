@@ -4,6 +4,7 @@ import axios from "axios";
 import feed from "./fee.png";
 import FeedbackIcon from "@mui/icons-material/Feedback";
 import "react-toastify/dist/ReactToastify.css";
+import Navbar from "./Navbar";
 
 const Feedback = () => {
   const [name, setname] = useState("");
@@ -24,6 +25,7 @@ const Feedback = () => {
 
   return (
     <div>
+      <Navbar />
       <ToastContainer />
       <h1
         style={{ textShadow: "2px 2px purple", color: "green" }}
@@ -49,7 +51,7 @@ const Feedback = () => {
           <textarea
             type="text"
             rows="4"
-            cols="50"
+            cols="35"
             value={feedback}
             onChange={(e) => setfeedback(e.target.value)}
           />

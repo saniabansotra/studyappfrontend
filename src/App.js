@@ -1,5 +1,5 @@
 import "./App.css";
-import Navbar from "./component/Navbar";
+
 import Home from "./component/home";
 import Login from "./component/login";
 import Signup from "./component/signup";
@@ -7,6 +7,7 @@ import Courses from "./component/courses";
 import Contact from "./component/contact";
 import Front from "./component/front";
 import Feedback from "./component/feedback";
+import "bootstrap/dist/css/bootstrap.min.css";
 // import {
 //   BrowserRouter as Router,
 //   Switch,
@@ -23,7 +24,6 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar />
         <Routes>
           <Route exact path="/" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />

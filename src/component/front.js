@@ -1,9 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import logo1 from "./logo.jpg";
 const Front = () => {
+  const location = useLocation();
   return (
     <>
+      <img src={logo1} class="image1" width="100px" height="60vh" alt="Logo" />
       <div>
+        <h2 style={{ color: "white" }}>
+          <marquee scrollamount="20">
+            {" "}
+            Hello <span style={{ color: "purple" }}>
+              {location.state.id}{" "}
+            </span>{" "}
+            and Welcome to Learing...{" "}
+          </marquee>
+        </h2>
         <h1 id="front1">CAVE OF PROGRAMMING</h1>
         <h3 id="front2">Learn to Program</h3>
         <h5 class="para">

@@ -36,6 +36,7 @@ function Login() {
 
   return (
     <div>
+      <img src={logo1} class="image1" width="100px" height="60vh" alt="Logo" />
       <div className="login" class="form">
         <h1
           style={{

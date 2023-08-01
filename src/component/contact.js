@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 // import logo1 from "./logo.jpg";
 import "react-toastify/dist/ReactToastify.css";
+import Navbar from "./Navbar";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import FeedbackIcon from "@mui/icons-material/Feedback";
@@ -93,6 +94,7 @@ const Home = () => {
   //   }, []);
   return (
     <>
+      <Navbar />
       <ToastContainer />
       <nav>
         {/* <img src={logo1} class="image1" width="100px" alt="Logo" /> */}

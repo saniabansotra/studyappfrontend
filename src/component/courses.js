@@ -1,5 +1,6 @@
 import React from "react";
 import web from "./webdevelopment.jpg";
+import Navbar from "./Navbar";
 import c from "./cplus.jpg";
 import java from "./Java-Course.jpg";
 import python from "./python.jpg";
@@ -11,6 +12,7 @@ import { Link } from "react-router-dom";
 const Courses = () => {
   return (
     <>
+      <Navbar />
       <h1
         class="coursetext"
         style={{

@@ -1,5 +1,8 @@
 import React from "react";
 import logo1 from "./logo.jpg";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/js/src/collapse.js";
+
 import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
@@ -16,7 +19,7 @@ const Navbar = () => {
             />
           </Link>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler bg-light"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNavAltMarkup"

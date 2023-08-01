@@ -1,8 +1,10 @@
 import React from "react";
+import Navbar from "./Navbar";
 
 const Home = () => {
   return (
     <div>
+      <Navbar />
       <div
         class="homemain"
         style={{ color: "green", textShadow: "2px 2px purple" }}
@@ -13,9 +15,9 @@ const Home = () => {
           To a More Fulfilling & Higher Paying Career in Tech
         </h4>
       </div>
-      <h1 class="videotext">
+      <h2 class="videotext">
         <marquee> HTML </marquee>
-      </h1>
+      </h2>
       <iframe
         width="400"
         height="300"
@@ -27,9 +29,9 @@ const Home = () => {
       ></iframe>
       <div />
       <div>
-        <h1 class="videotext">
+        <h2 class="videotext">
           <marquee> CSS... Cascading Style Sheet</marquee>
-        </h1>
+        </h2>
         <iframe
           width="400"
           height="300"
@@ -40,9 +42,9 @@ const Home = () => {
           allowfullscreen
         ></iframe>
       </div>
-      <h1 class="videotext">
+      <h2 class="videotext">
         <marquee>JavaScript</marquee>
-      </h1>
+      </h2>
       <div class="mainhome">
         <iframe
           width="200"
